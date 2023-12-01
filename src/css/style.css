@@ -1,7 +1,13 @@
 body {
-  padding: 30px;
+  margin: 30px;
 
   background-color: #fffafa;
+}
+
+.is-hidden {
+  position: absolute;
+  display: none;
+  /* visibility: hidden; */
 }
 
 .breed-select {
@@ -17,11 +23,6 @@ body {
 
 .div-descr {
   max-width: 500px;
-}
-
-.is-hidden {
-  position: absolute;
-  visibility: hidden;
 }
 
 .cat-info {
