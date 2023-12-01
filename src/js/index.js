@@ -14,8 +14,7 @@ const catInfo = document.querySelector('.cat-info');
 selectRef.addEventListener('change', onSelectBreed);
 
 errorRef.classList.add('is-hidden');
-selectRef.classList.add('is-hidden');
-// loaderRef.classList.replace('loader', 'is-hidden');
+loaderRef.classList.replace('loader', 'is-hidden');
 catInfo.classList.add('is-hidden');
 
 let arrBreeds = [];
@@ -28,9 +27,6 @@ fetchBreeds()
       // console.log(arrBreeds);
     });
 
-    loaderRef.classList.replace('loader', 'is-hidden');
-    selectRef.classList.remove('is-hidden');
-
     new SlimSelect({
       select: selectRef,
       data: arrBreeds,
@@ -41,6 +37,7 @@ fetchBreeds()
 //При виборі породи - інформація про кота
 function onSelectBreed(evt) {
   loaderRef.classList.replace('is-hidden', 'loader');
+  catInfo.classList.add('is-hidden');
 
   const idSelectedBreed = evt.currentTarget.value;
   console.log(idSelectedBreed);
@@ -51,7 +48,6 @@ function onSelectBreed(evt) {
       console.log(data);
 
       loaderRef.classList.replace('loader', 'is-hidden');
-      catInfo.classList.add('is-hidden');
 
       const { url, breeds } = data[0];
 
