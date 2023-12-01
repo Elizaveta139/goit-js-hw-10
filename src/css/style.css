@@ -7,7 +7,7 @@ body {
 .is-hidden {
   position: absolute;
   display: none;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 .breed-select {

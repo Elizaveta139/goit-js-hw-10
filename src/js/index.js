@@ -14,7 +14,8 @@ const catInfo = document.querySelector('.cat-info');
 selectRef.addEventListener('change', onSelectBreed);
 
 errorRef.classList.add('is-hidden');
-loaderRef.classList.replace('loader', 'is-hidden');
+// loaderRef.classList.replace('loader', 'is-hidden');
+selectRef.classList.add('is-hidden');
 catInfo.classList.add('is-hidden');
 
 let arrBreeds = [];
@@ -26,6 +27,9 @@ fetchBreeds()
       arrBreeds.push({ text: el.name, value: el.id });
       // console.log(arrBreeds);
     });
+
+    loaderRef.classList.replace('loader', 'is-hidden');
+    selectRef.classList.remove('is-hidden');
 
     new SlimSelect({
       select: selectRef,
@@ -48,6 +52,7 @@ function onSelectBreed(evt) {
       console.log(data);
 
       loaderRef.classList.replace('loader', 'is-hidden');
+      catInfo.classList.add('is-hidden');
 
       const { url, breeds } = data[0];
 
